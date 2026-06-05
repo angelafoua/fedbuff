@@ -11,7 +11,7 @@ before aggregating and updating. Concurrency = cohort size = clients-per-round.
 
 from typing import List, Dict
 import torch
-from .base import FLServer, ClientUpdate
+from algorithms.base import FLServer, ClientUpdate
 
 
 class SyncFLServer(FLServer):

@@ -8,8 +8,8 @@ Uses staleness-weighted updates similar to FedBuff.
 
 from typing import List
 import torch
-from .base import FLServer, ClientUpdate
-from ..utils.delay import staleness_scaling
+from algorithms.base import FLServer, ClientUpdate
+from utils.delay import staleness_scaling
 
 
 class FedAsyncServer(FLServer):
