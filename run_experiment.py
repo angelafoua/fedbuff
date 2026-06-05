@@ -24,9 +24,9 @@ import json
 import numpy as np
 from typing import List, Dict
 
-from fedbuff.config import ExperimentConfig, get_config, BEST_HYPERPARAMS
-from fedbuff.simulator import FLSimulator
-from fedbuff.utils.metrics import ExperimentMetrics, format_table1
+from config import ExperimentConfig, get_config, BEST_HYPERPARAMS
+from simulator import FLSimulator
+from utils.metrics import ExperimentMetrics, format_table1
 
 
 def run_single(config: ExperimentConfig) -> ExperimentMetrics:
