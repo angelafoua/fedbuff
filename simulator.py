@@ -17,14 +17,14 @@ from collections import deque
 import torch
 import torch.nn as nn
 
-from .config import ExperimentConfig
-from .algorithms.base import FLClient, FLServer, ClientUpdate
-from .algorithms.fedbuff import FedBuffServer
-from .algorithms.fedasync import FedAsyncServer
-from .algorithms.fedavg import SyncFLServer, create_sync_server
-from .utils.delay import DelaySimulator, StalenessTracker
-from .utils.metrics import ExperimentMetrics, evaluate_model, print_experiment_summary
-from .utils.models import get_model
+from config import ExperimentConfig
+from algorithms.base import FLClient, FLServer, ClientUpdate
+from algorithms.fedbuff import FedBuffServer
+from algorithms.fedasync import FedAsyncServer
+from algorithms.fedavg import SyncFLServer, create_sync_server
+from utils.delay import DelaySimulator, StalenessTracker
+from utils.metrics import ExperimentMetrics, evaluate_model, print_experiment_summary
+from utils.models import get_model
 
 
 class FLSimulator:
@@ -82,13 +82,13 @@ class FLSimulator:
     def _create_dataset(self):
         cfg = self.config
         if cfg.dataset == "cifar10":
-            from .datasets.cifar10 import CIFAR10FL
+            from datasets.cifar10 import CIFAR10FL
             return CIFAR10FL(data_dir=cfg.data_dir, seed=cfg.seed)
         elif cfg.dataset == "sent140":
-            from .datasets.leaf import Sent140FL
+            from datasets.leaf import Sent140FL
             return Sent140FL(data_dir=f"{cfg.data_dir}/sent140")
         elif cfg.dataset == "celeba":
-            from .datasets.leaf import CelebAFL
+            from datasets.leaf import CelebAFL
             return CelebAFL(data_dir=f"{cfg.data_dir}/celeba")
         else:
             raise ValueError(f"Unknown dataset: {cfg.dataset}")

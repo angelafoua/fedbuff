@@ -11,9 +11,9 @@ providing an extra degree of freedom over SyncFL.
 
 from typing import Dict, List, Optional
 import torch
-from .base import FLServer, ClientUpdate
-from ..utils.delay import staleness_scaling
-from ..utils.dp import clip_update, add_gaussian_noise, TreeAggregation
+from algorithms.base import FLServer, ClientUpdate
+from utils.delay import staleness_scaling
+from utils.dp import clip_update, add_gaussian_noise, TreeAggregation
 
 
 class FedBuffServer(FLServer):
